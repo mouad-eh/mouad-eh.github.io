@@ -1,20 +1,53 @@
 {
-  "name": "astro-lane",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/mdx": "^0.19.0",
-    "@astrojs/rss": "^2.3.2",
-    "@astrojs/sitemap": "^1.2.2",
-    "@astrojs/tailwind": "^3.1.1",
-    "astro": "^2.3.0",
-    "tailwindcss": "^3.3.1"
-  }
+    "name": "astro-lane",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Lane - A personal portfolio landing template for developers and designers. Made by Avenue Labs",
+    "main": "index.astro",
+    "private": false,
+    "keywords": [
+        "astro",
+        "astrojs",
+        "blog",
+        "reactjs",
+        "npx",
+        "npm",
+        "astro-react",
+        "framer",
+        "tailwindcss",
+        "tailwind"
+    ],
+    "author": "Avenue Labs - Christian Luntok",
+    "homepage": "https://avenuelabs.co/",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/mdx": "^0.19.0",
+        "@astrojs/rss": "^2.3.2",
+        "@astrojs/sitemap": "^1.2.2",
+        "@astrojs/tailwind": "^3.1.1",
+        "astro": "^2.3.0",
+        "tailwindcss": "^3.3.1",
+        "eslint-config-next": "13.1.2",
+        "framer-motion": "^10.11.2",
+        "sass": "^1.54.4"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.9",
+        "autoprefixer": "^10.4.13",
+        "clsx": "^1.2.1",
+        "eslint": "^8.36.0",
+        "eslint-config-prettier": "^8.8.0",
+        "postcss": "^8.4.21",
+        "prettier": "2.8.6",
+        "stylelint": "^14.16.1",
+        "prismjs": "^1.29.0",
+        "reading-time": "^1.5.0",
+        "mdast-util-to-string": "^3.1.0"
+    }
 }
