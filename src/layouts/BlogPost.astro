@@ -1,51 +1,72 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import Layout from "./Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import { Icon } from "astro-icon";
 
-type Props = CollectionEntry<'blog'>['data'];
+export interface Props {
+    post: CollectionEntry<"blog">;
+}
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { post } = Astro.props;
+
+const { title, description, pubDate, updatedDate, heroImage } = post.data;
+
+const { Content } = await post.render();
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
-
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title={title} description={description} image={heroImage}>
+    <SectionContainer class="wrap wrap-px grid gap-8 px-4 sm:gap-16 sm:px-8">
+        <div class="flex mt-32">
+            <div class="content--container flex-1 md:pr-6">
+                <article
+                    class="mx-auto prose prose-neutral prose-headings:font-medium prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base prose-h2:scroll-mt-4 prose-h3:scroll-mt-4 prose-h4:scroll-mt-4 prose-h5:scroll-mt-4 prose-h6:scroll-mt-4 prose-headings:my-8"
+                >
+                    <a
+                        class="cursor-pointer flex no-underline mb-16"
+                        onclick="window.history.back()"
+                    >
+                        <Icon name="ph:arrow-left-light" class="w-6 h-6 mr-4" />
+                        Back
+                    </a>
+                    <div class="post--title">
+                        <h1 class="text-3xl md:text-4xl">
+                            {title}
+                        </h1>
+                    </div>
+                    <span
+                        class="mb-4 text-sm w-max md:w-auto items-center rounded-full border border-neutral-300 bg-white px-1 py-[2px] font-medium text-primary-500 block md:inline-flex"
+                    >
+                        <span class="px-2">
+                            <FormattedDate date={pubDate} />
+                        </span>
+                    </span>
+                    {
+                        updatedDate && (
+                            <div class="last-updated-on">
+                                Last updated on{" "}
+                                <FormattedDate date={updatedDate} />
+                            </div>
+                        )
+                    }
+                    {
+                        heroImage && (
+                            <img
+                                width={720}
+                                height={360}
+                                src={heroImage}
+                                alt={title}
+                            />
+                        )
+                    }
+                    <div
+                        class="prose-code:whitespace-pre-wrap prose-code:break-words prose-code:overflow-x-auto"
+                    >
+                        <Content />
+                    </div>
+                </article>
+            </div>
+        </div>
+    </SectionContainer>
+</Layout>
