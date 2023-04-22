@@ -16,7 +16,7 @@ import getSortedTags from "@/utils/getSortedTags";
 
 const posts = await getCollection("blog");
 
-const tags = getSortedTags(posts).slice(0, 5);
+const tags = getSortedTags(posts).slice(0, 6);
 const sortedPosts = posts
     .filter((post) => post.data.featured == true)
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
@@ -155,7 +155,7 @@ const sortedPosts = posts
                 <h2
                     class="font-medium text-h4 text-neutral-500 leading-8 tracking-tighter mb-0"
                 >
-                    Tags
+                    Top Tags
                 </h2>
 
                 <a href="/tags" class="font-medium flex no-underline ml-auto">
