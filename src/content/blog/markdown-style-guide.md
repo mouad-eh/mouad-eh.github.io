@@ -7,6 +7,7 @@ draft: false
 tags:
     - docs
     - guide
+    - markdown
 heroImage: "/images/placeholder-hero.jpg"
 ---
 
