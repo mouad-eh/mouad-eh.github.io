@@ -3,9 +3,9 @@
 // all pages through the use of the <SEO /> component.
 import "../styles/globals.scss";
 import SectionContainer from "@/components/SectionContainer.astro";
-import { MotionBTTContainer } from "@/components/motion/MotionBTTContainer";
 import SEO from "@/components/seo/SEO.astro";
 import { Icon } from "astro-icon";
+import { SOCIALS } from "@config";
 
 const {
     class: className,
@@ -36,81 +36,63 @@ const {
 
         <SectionContainer class="mt-32">
             <footer class="py-40 bg-neutral-100">
-                <MotionBTTContainer
-                    transition={{ delay: 0.2, duration: 0.5 }}
-                    client:load
-                >
-                    <div class="wrap-sm mx-auto px-8 grid gap-16">
-                        <h2
-                            class="font-medium text-4xl md:text-6xl lg:text-7xl leading-10 lg:leading-[70px] tracking-tight lg:tracking-tighter"
+                <div class="wrap-sm mx-auto px-8 grid gap-16">
+                    <h2
+                        class="font-medium text-4xl md:text-6xl lg:text-7xl leading-10 lg:leading-[70px] tracking-tight lg:tracking-tighter"
+                    >
+                        Let&apos;s make{" "}
+                        <span
+                            class="text-neutral-500 inline font-bold underline-offset-4 underline"
                         >
-                            Let&apos;s make{" "}
-                            <span
-                                class="text-neutral-500 inline font-bold underline-offset-4 underline"
-                            >
-                                great work
-                            </span>{" "}
-                            together.
-                        </h2>
-                        <p
-                            class="text-neutral-500 font-medium text-3xl md:text-5xl lg:text-4xl leading-10 tracking-tight lg:tracking-tighter"
-                        >
-                            If you want to know more about tweaking my style,
-                            adding more posts, and making it truly yours, just
-                            click on the GitHub link below to check out my repo.
-                        </p>
-                        <div class="footer-credits">
-                            <a
-                                class="block text-3xl md:text-5xl lg:text-4xl font-medium mb-2 md:mb-8 lg:mb-4 leading-10 tracking-tighter relative underline hover:-top-0.5 hover:text-skin-accent focus-visible:p-1"
-                                href="mailto:hey@avenuelabs.co"
-                            >
-                                hey@avenuelabs.co
-                            </a>
-                            <div
-                                class="footer-socials font-medium grid gap-6 md:gap-10 grid-cols-3 max-w-md text-xl md:text-3xl lg:text-2xl leading-10 tracking-tighter"
-                            >
-                                <a
-                                    href="https://www.linkedin.com/in/christian-luntok/"
-                                    class="grid-cols-1 relative underline hover:-top-0.5 hover:text-skin-accent focus-visible:p-1 flex items-center"
-                                    target="_blank"
-                                >
-                                    <Icon
-                                        name="ph:linkedin-logo-fill"
-                                        class="w-6 h-6 inline"
-                                    /> Linkedin
-                                </a>
-                                <a
-                                    href="https://github.com/christian-luntok/astro-lane/"
-                                    class="grid-cols-1 relative underline hover:-top-0.5 hover:text-skin-accent focus-visible:p-1 flex items-center"
-                                    target="_blank"
-                                >
-                                    <Icon
-                                        name="ph:github-logo"
-                                        class="w-6 h-6 inline"
-                                    />
-                                    GitHub
-                                </a>
-                                <a
-                                    href="https://github.com/christian-luntok/astro-lane/"
-                                    class="grid-cols-1 relative underline hover:-top-0.5 hover:text-skin-accent focus-visible:p-1 flex items-center"
-                                    target="_blank"
-                                >
-                                    <Icon
-                                        name="ph:twitter-logo"
-                                        class="w-6 h-6 inline"
-                                    />
-                                    Twitter
-                                </a>
-                            </div>
-                        </div>
+                            great work
+                        </span>{" "}
+                        together.
+                    </h2>
+                    <p
+                        class="text-neutral-500 font-medium text-3xl md:text-5xl lg:text-4xl leading-10 tracking-tight lg:tracking-tighter"
+                    >
+                        If you want to know more about tweaking my style, adding
+                        more posts, and making it truly yours, just click on the
+                        GitHub link below to check out my repo.
+                    </p>
+                    <div class="footer-credits text-neutral-500">
                         <a
-                            class="text-neutral-500 text-lg"
-                            href="https://avenuelabs.co/"
+                            class="block text-3xl md:text-5xl lg:text-4xl font-medium mb-2 md:mb-8 lg:mb-4 leading-10 tracking-tighter relative hover:underline hover:-top-0.5 hover:text-skin-accent hover:text-black focus-visible:p-1"
+                            href="mailto:hey@avenuelabs.co"
                         >
+                            hey@avenuelabs.co
+                        </a>
+                        <div
+                            class="footer-socials font-medium flex gap-6 md:gap-10 max-w-md text-xl md:text-3xl lg:text-2xl leading-10 tracking-tighter"
+                        >
+                            {
+                                SOCIALS.filter((social) => social.active).map(
+                                    (social) => (
+                                        <a
+                                            href={social.href}
+                                            class="relative hover:underline hover:-top-0.5 hover:text-skin-accent hover:text-black focus-visible:p-1 flex items-center"
+                                            target="_blank"
+                                            title={social.title}
+                                        >
+                                            <Icon
+                                                name={social.icon}
+                                                class="w-10 h-10 inline"
+                                            />
+                                        </a>
+                                    )
+                                )
+                            }
+                        </div>
+                    </div>
+                    <span
+                        class="text-neutral-500 text-md flex flex-wrap gap-4 md:gap-0 md:justify-between"
+                    >
+                        <span>Copyright © 2023 🚀 Astro Lane</span>
+                        <a class="" href="https://avenuelabs.co/">
                             Made by Avenue Labs - Christian Luntok
                         </a>
-                    </div>
-                </MotionBTTContainer>
+                    </span>
+                </div>
             </footer>
         </SectionContainer>
     </body>
