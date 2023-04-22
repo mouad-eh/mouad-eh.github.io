@@ -16,7 +16,7 @@ const metaDescription = description ? description : SITE.desc;
 const metaKeywords = keywords ? keywords : SITE.keywords;
 const siteURL = url ?? SITE.siteUrl;
 const twitterHandle = twitterhandle ?? "@your-handle";
-const imagePreview = `${siteURL}/${image ?? SITE.ogImage}`;
+const imagePreview = `${siteURL}${image ?? SITE.ogImage}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
