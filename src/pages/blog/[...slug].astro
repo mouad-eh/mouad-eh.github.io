@@ -4,7 +4,7 @@ import BlogPost from "@/layouts/BlogPost.astro";
 import getPageNumbers from "@/utils/getPageNumber";
 import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@config";
-import Blogs from "@/layouts/Blogs.astro";
+import Posts from "@/layouts/Posts.astro";
 
 export interface Props {
     post: CollectionEntry<"blog">;
@@ -45,10 +45,11 @@ const paginatedPosts = sortedPosts.slice(startPost, lastPost);
     post ? (
         <BlogPost post={post} />
     ) : (
-        <Blogs
+        <Posts
             posts={paginatedPosts}
             pageNum={currentPage}
             totalPages={totalPages.length}
+            title="Blogs"
         />
     )
 }
