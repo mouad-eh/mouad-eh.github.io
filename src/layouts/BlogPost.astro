@@ -14,13 +14,18 @@ const { post } = Astro.props;
 
 const { title, description, pubDate, updatedDate, heroImage } = post.data;
 
+const ogUrl = new URL(
+    heroImage ? heroImage : `${title.replace(/\s+/g, "-").toLowerCase()}.png`,
+    Astro.url.origin
+).href;
+
 const { Content } = await post.render();
 ---
 
 <Layout
     title={`${title} - ${SITE.title}`}
     description={description}
-    image={heroImage}
+    image={ogUrl}
 >
     <SectionContainer class="wrap wrap-px grid gap-8 px-4 sm:gap-16 sm:px-8">
         <div class="flex mt-32">
