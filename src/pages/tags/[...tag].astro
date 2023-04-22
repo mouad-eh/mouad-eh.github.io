@@ -1,42 +1,28 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "@/layouts/BlogPost.astro";
-import getPageNumbers from "@/utils/getPageNumber";
-import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@config";
-import Blogs from "@/layouts/Blogs.astro";
+import getSortedTags from "@/utils/getSortedTags";
+import getPostsByTag from "@/utils/getPostsbyTag";
+import Tags from "@/layouts/Tags.astro";
 
 export interface Props {
     post: CollectionEntry<"blog">;
+    tag: string;
 }
-
 export async function getStaticPaths() {
-    const posts = await getCollection("blog", ({ data }) => !data.draft);
-    const postResult = posts.map((post) => ({
-        params: { slug: post.slug },
-        props: { post }
-    }));
-    const pagePaths = getPageNumbers(posts.length).map((pageNum) => ({
-        params: { slug: String(pageNum) }
-    }));
-    return [...postResult, ...pagePaths];
+    const posts = await getCollection("blog");
+    const tags = getSortedTags(posts);
+    return tags.map((tag) => {
+        return {
+            params: { tag },
+            props: { tag }
+        };
+    });
 }
 
-const { slug } = Astro.params;
-const { post } = Astro.props;
-
-const posts = await getCollection("blog");
-const sortedPosts = getSortedPosts(posts);
-
-const totalPages = getPageNumbers(sortedPosts.length);
-
-const currentPage =
-    slug && !isNaN(Number(slug)) && totalPages.includes(Number(slug))
-        ? Number(slug)
-        : 0;
-
-const lastPost = currentPage * SITE.postPerPage;
-const startPost = lastPost - SITE.postPerPage;
-
-const paginatedPosts = sortedPosts.slice(startPost, lastPost);
+const { tag } = Astro.props;
+const posts = await getCollection("blog", ({ data }) => !data.draft);
+const tagPosts = getPostsByTag(posts, tag);
 ---
+
+{(<Tags posts={tagPosts} title="Tags" tag={tag} />)}
