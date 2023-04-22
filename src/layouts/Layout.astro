@@ -7,6 +7,8 @@ import SEO from "@/components/seo/SEO.astro";
 import { Icon } from "astro-icon";
 import { SOCIALS } from "@config";
 
+const currentYear = new Date().getFullYear();
+
 const {
     class: className,
     title,
@@ -87,7 +89,7 @@ const {
                     <span
                         class="text-neutral-500 text-md flex flex-wrap gap-4 md:gap-0 md:justify-between"
                     >
-                        <span>Copyright © 2023 🚀 Astro Lane</span>
+                        <span>Copyright © {currentYear} 🚀 Astro Lane</span>
                         <a class="" href="https://avenuelabs.co/">
                             Made by Avenue Labs - Christian Luntok
                         </a>
