@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import { Image } from "@astrojs/image/components";
-import profileImage from "../../public/images/picture.png";
+import profileImage from "../../public/icons/avenue-icon-alt.png";
 import projectData from "@/data/projectData.json";
 import CardGroup from "@/components/card/CardGroup.astro";
 import Card from "@/components/card/Card.astro";
@@ -34,11 +34,11 @@ const sortedPosts = posts
             <Image
                 src={profileImage}
                 alt={"Lane - Avenue Labs"}
-                width={128}
-                height={128}
+                width={160}
+                height={160}
                 aspectRatio={1 / 1}
                 format={"webp"}
-                class="rounded-full bg-neutral-50 object-cover"
+                class="rounded-full h-32 w-32 bg-neutral-50 object-cover p-4"
             />
             <div class="content-container">
                 <div class="page-title--content max-w-[54rem] mb-8 lg:mb-4">
