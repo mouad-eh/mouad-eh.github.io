@@ -10,9 +10,10 @@ export interface Props {
     pageNum: number;
     totalPages: number;
     posts: CollectionEntry<"blog">[];
+    title: string;
 }
 
-const { pageNum, totalPages, posts } = Astro.props;
+const { pageNum, totalPages, posts, title } = Astro.props;
 
 const prev = pageNum > 1 ? "" : "disabled";
 const next = pageNum < totalPages ? "" : "disabled";
@@ -26,8 +27,8 @@ const breadcrumbList = currentUrlPath.split("/").slice(1);
 ---
 
 <Layout
-    title={`Blogs - ${SITE.title}`}
-    description={`A list of blogs from ${SITE.author}`}
+    title={`${title} - ${SITE.title}`}
+    description={`A list of posts from ${SITE.author} in ${SITE.title}`}
 >
     <div
         class="main-wrapper wrap-sm grid gap-16 px-8 md:gap-24 lg:gap-32 mx-auto"
@@ -95,7 +96,7 @@ const breadcrumbList = currentUrlPath.split("/").slice(1);
                         <a
                             tabindex={prev === "disabled" ? "-1" : "0"}
                             href={`/blog${
-                                pageNum - 1 !== 1 ? "/" + (pageNum - 1) : "#"
+                                pageNum - 1 !== 1 ? "/" + (pageNum - 1) : "/"
                             }`}
                             class={`mr-4 select-none flex flex-wrap ${
                                 prev === "disabled"
