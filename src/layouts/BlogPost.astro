@@ -4,6 +4,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Layout from "./Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import { Icon } from "astro-icon";
+import { SITE } from "@config";
 
 export interface Props {
     post: CollectionEntry<"blog">;
@@ -16,7 +17,11 @@ const { title, description, pubDate, updatedDate, heroImage } = post.data;
 const { Content } = await post.render();
 ---
 
-<Layout title={title} description={description} image={heroImage}>
+<Layout
+    title={`${title} - ${SITE.title}`}
+    description={description}
+    image={heroImage}
+>
     <SectionContainer class="wrap wrap-px grid gap-8 px-4 sm:gap-16 sm:px-8">
         <div class="flex mt-32">
             <div class="content--container flex-1 md:pr-6">
