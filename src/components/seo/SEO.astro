@@ -16,7 +16,7 @@ const metaDescription = description ? description : SITE.desc;
 const metaKeywords = keywords ? keywords : SITE.keywords;
 const siteURL = url ?? SITE.siteUrl;
 const twitterHandle = twitterhandle ?? "@your-handle";
-const imagePreview = `${siteURL}${image ?? SITE.ogImage}`;
+const imagePreview = image ?? `${siteURL}${SITE.ogImage}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -31,6 +31,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!-- Twitter -->
 <meta name="twitte:card" content="summary_large_image" />
 <meta name="twitter:creator" content={twitterHandle} />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={imagePreview} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:url" content={siteURL} />
