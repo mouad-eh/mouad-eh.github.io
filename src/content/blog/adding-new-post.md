@@ -1,5 +1,5 @@
 ---
-pubDate: 2023-04-25
+pubDate: 2023-04-23
 title: Adding posts in Astro Lane
 featured: true
 draft: false
@@ -10,15 +10,17 @@ heroImage: ""
 description: "Rules & recommendations for creating or adding posts using Astro Lane."
 ---
 
-Here are some rules/recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
+Are you planning to create a blog post using the "Astro Lane" theme? Here are some guidelines and recommendations to help you create a great post.
 
 ## Table of contents
 
-## Frontmatter
+## What is Frontmatter?
 
-Frontmatter is the main place to store some important information about the post (article). Frontmatter lies at the top of the article and is written in YAML format. Read more about frontmatter and its usage in [astro documentation](https://docs.astro.build/en/guides/markdown-content/).
+First things first, frontmatter is where you store important information about your article post. Some of the essential frontmatter configuration options for blog posts include title, description, pubDate, author, featured, draft, tags, and heroImage. Title and description are particularly essential for search engine optimization (SEO).
 
-Here is the list of frontmatter property for each post.
+> Read more about frontmatter and its usage in [astro documentation](https://docs.astro.build/en/guides/markdown-content/).
+
+Here are the default frontmatter configuration options for blog posts:
 
 | Property          | Description                                                                                       | Remark                                        |
 | ----------------- | ------------------------------------------------------------------------------------------------- | --------------------------------------------- |
@@ -31,24 +33,22 @@ Here is the list of frontmatter property for each post.
 | **_tags_**        | Related keywords for this post. Written in array yaml format.                                     | default = others                              |
 | **_heroImage_**   | Thumbnail of the post. Will be the OG image of the post. Useful for social media sharing and SEO. | default = SITE.ogImage or generated SVG image |
 
-Only `title`, `description` and `pubDate` fields in frontmatter must be specified.
+The `title`, `description` and `pubDate` are required fields in frontmatter and must be specified.
 
-Title and description (excerpt) are important for search engine optimization (SEO) and thus AstroPaper encourages to include these in blog posts.
+Title and description (excerpt) are important for search engine optimization (SEO).
 
-If you omit `tags` in a blog post (in other words, if no tag is specified), the default tag `others` will be used as a tag for that post. You can set the default tag in the `/src/content/config.ts` file.
+If you there's no specified `tags` in a blog post, the default tag `others` will be used as a tag for that post. You can set the default tag in the `/src/content/config.ts` file.
 
 ```ts
 // src/contents/config.ts
 export const blogSchema = z.object({
     // ---
     // replace "others" with whatever you want
-    tags: z.array(z.string()).default(["others"]),
-    ogImage: z.string().optional(),
-    description: z.string()
+    tags: z.array(z.string()).default(["others"])
 });
 ```
 
-### Sample Frontmatter
+### Example of Frontmatter data
 
 Here is the sample frontmatter for a post.
 
@@ -57,58 +57,51 @@ Here is the sample frontmatter for a post.
 ---
 title: The title of the post
 author: your name
-pubDatetime: 2022-09-21T05:17:19Z
-postSlug: the-title-of-the-post
+pubDate: 2023-03-25
 featured: true
 draft: false
 tags:
-    - some
     - example
     - tags
-ogImage: ""
+heroImage: ""
 description: This is the example description of the example post.
 ---
 ```
 
-## Adding table of contents
+## Adding Table of Contents
 
-By default, a post (article) does not include any table of contents (toc). To include toc, you have to specify it in a specific way.
-
-Write `Table of contents` in h2 format (## in markdown) and place it where you want it to be appeared on the post.
-
-For instance, if you want to place your table of contents just under the intro paragraph (like I usually do), you can do that in the following way.
+By default, the Astro Lane theme does not include any table of contents in a post. However, you can add a table of contents by writing "Table of contents" in H2 format (## in markdown) and placing it where you want it to appear in your post.
 
 ```md
 ---
-# some frontmatter
+# frontmatter settings
 ---
 
-Here are some recommendations, tips & ticks for creating new posts in AstroPaper blog theme.
+Here are some sample text from the example above.
 
 ## Table of contents
 
-<!-- the rest of the post -->
+<!-- The Rest of the content-->
 ```
 
-## Headings
+## Image size and compression
 
-There's one thing to note about headings. The AstroPaper blog posts use title (title in the frontmatter) as the main heading of the post. Therefore, the rest of the heading in the post should be using h2 \~ h6.
-
-This rule is not mandatory, but highly recommended for visual, accessibility and SEO purposes.
-
-## Bonus
-
-### Image compression
-
-When you put images in the blog post, it is recommended that the image is compressed. This will affect the overall performance of the website.
-
-My recommendation for image compression sites.
+It's recommended that you compress any images you add to your blog post, as this can affect the overall performance of your website. Some recommended image compression tools include TinyPng, ShortPixel, TinyJPG, and Kraken.
 
 -   [TinyPng](https://tinypng.com/)
+-   [ShortPixel](https://shortpixel.com/online-image-compression)
 -   [TinyJPG](https://tinyjpg.com/)
+-   [Kraken](https://kraken.io/)
 
-### OG Image
+## Headings suggestions
 
-The default OG image will be placed if a post does not specify the OG image. Though not required, OG image related to the post should be specify in the frontmatter. The recommended size for OG image is **_1200 X 640_** px.
+In the Astro Lane theme, the title of the post is the main heading (H1) of the post. Therefore, it's recommended that you use H2 to H6 for the rest of the headings in your content for accessibility and SEO purposes.
 
-> Since AstroPaper v1.4.0, OG images will be generated automatically if not specified. Check out [the announcement](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/).
+## OG Image/Hero Image
+
+If your post does not specify an OG image, the default OG image will be used. However, it's recommended that you specify an OG image related to your post in the frontmatter. The recommended size for an OG image is 1200 x 640 pixels. If a hero image is not specified, an OG image will be generated automatically same as the below.
+
+![This is an example of an OG image generated automatically if heroImage frontmatter is not provided](/adding-posts-in-astro-lane.png)
+_This is an example of an OG image generated automatically if heroImage frontmatter is not provided._
+
+To summarize, when creating a post using the Astro Lane theme, you need to ensure you have the essential frontmatter configuration options, add a table of contents if needed, compress any images you use, use proper headings, and specify an OG image if possible. By following these guidelines, you can create an excellent post that's optimized for SEO and accessibility.
