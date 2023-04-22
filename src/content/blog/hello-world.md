@@ -1,5 +1,5 @@
 ---
-title: "Testing Testing 123!"
+title: "Testing Testing 123"
 description: "First Post - Hello World"
 pubDate: 2023-04-02
 heroImage: "/images/placeholder-hero.jpg"
@@ -8,13 +8,14 @@ draft: false
 tags:
     - post
     - guide
+    - markdown
 ---
 
 ## Hello World
 
 This is the first blog post here!
 
-You can find me at <code>/src/content/post/hello-world.md.</code>
+You can find me at <code>/src/content/post/hello-world.md</code>.
 
 Here you can add/update/delete details and watch the changes live when running in develop mode.
 
