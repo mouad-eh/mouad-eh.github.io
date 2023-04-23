@@ -10,9 +10,9 @@ Astro Lane is a customizable blog theme for Astro, designed to provide a persona
 
 <hr>
 
-![Astro Lane Mockup](/public/images/astro-lane.png);
+![Astro Lane Mockup](/public/images/astro-lane.png)
 
-Key Features:
+## Key Features:
 
 -   Minimal styling (make it your own!)
 -   Accessible, semantic HTML markup
