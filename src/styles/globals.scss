@@ -4,9 +4,9 @@
 * Avenue CSS Kit v0.1
 =========================================================
 
-* Demo Page: 'http://xxx.app/'
-* Copyright 2022 Christian Luntok 
-* Coded by Christian Luntok
+* Demo Page: 'https://astro-lane.avenuelabs.co/'
+* Copyright 2023 Christian Luntok - Avenue Labs
+* Coded by Christian Luntok - Avenu Labs
 
 =========================================================
 
@@ -14,16 +14,15 @@
 */
 
 // Core CSS Reset/MISCS
-@import 'core/misc';
+@import "core/misc";
 
 // Core Declarations
-@import 'core/variables';
+@import "core/variables";
 
 // Core Layouts and Style Definitions
-@import 'core/general';
-@import 'core/typography';
-@import 'core/utilities';
-
+@import "core/general";
+@import "core/typography";
+@import "core/utilities";
 
 // Core Plugins
 // @import "plugins/plugin-tailwind";
