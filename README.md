@@ -1,53 +1,43 @@
-# Astro Starter Kit: Blog
+<div align="center">
+  <img alt="Astro Lane - Avenue Labs logo" src="/public/icons/avenue-icon-alt.png" width="70" />
+</div>
 
-```
-npm create astro@latest -- --template blog
-```
+<h1 align="center">
+  Astro Lane - Avenue Labs Astro Theme 🚀
+</h1>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+Astro Lane is a customizable blog theme for Astro, designed to provide a personalized touch to your site with ease. The theme offers minimal styling, making it easy for you to tailor it to your needs.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<hr>
 
+![Astro Lane Mockup](/public/images/astro-lane.png);
 
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
+Key Features:
 
-Features:
+-   Minimal styling (make it your own!)
+-   Accessible, semantic HTML markup
+-   Blazingly Fast
+-   100/100 Lighthouse performance
+-   Responsive & SEO-friendly with canonical URLs and OpenGraph data
+-   [Astro Image Integration](https://docs.astro.build/en/guides/integrations-guide/image/) for optimized images
+-   Sitemap support
+-   [Automatic RSS feed support](https://docs.astro.build/en/guides/rss)
+-   [Satori](https://github.com/vercel/satori) for creating open graph png images.
+-   Markdown & MDX support
+-   Draft Posts and Paginations
+-   Prism code syntax styling using Atom Dark theme.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Lighthouse Score
 
-## 🚀 Project Structure
+Astro Lane scores 100/100 in the Lighthouse performance audit.
 
-Inside of your Astro project, you'll see the following folders and files:
+![Astro Lane Lighthouse Score](/astro-lane-lighthouse-score.png);
 
-```
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
+## Demo
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Check out the [Demo](https://astro-lane.avenuelabs.co/), hosted on Vercel.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -60,10 +50,32 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Documentation
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+-   Configuration
+-   Adding A Post
+-   Markdown Guide
 
-## Credit
+## Want to learn more?
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Check out [Astro's documentation](https://docs.astro.build).
+
+## Deploy
+
+You can deploy your own Astro site on various platforms by following the [Astro docs](https://docs.astro.build/en/guides/deploy/) guide. By default, the site will be built (see Commands section above) to a `/dist` directory.
+
+## License
+
+Licensed under the MIT License, Copyright © 2023
+
+## Feedback and Suggestions
+
+If you have any suggestions/feedback, you can contact the creator, Christian Luntok, via [hey@avenuelabs.co](mailto:hey@avenuelabs.co). Alternatively, feel free to open an issue if you find bugs or want to request new features.
+
+## Credit/Acknowledgements
+
+This theme functionality is loosely based on [Astro Paper](https://github.com/satnaing/astro-paper)
+
+---
+
+Made by [Christian Luntok - Avenue Labs](https://avenuelabs.co/)
