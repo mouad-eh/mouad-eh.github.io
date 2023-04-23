@@ -31,7 +31,7 @@ Key Features:
 
 Astro Lane scores 100/100 in the Lighthouse performance audit.
 
-![Astro Lane Lighthouse Score](/astro-lane-lighthouse-score.png);
+![Astro Lane Lighthouse Score](/astro-lane-lighthouse-score.png)
 
 ## Demo
 
