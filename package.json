@@ -18,7 +18,7 @@
         "tailwind"
     ],
     "author": "Avenue Labs - Christian Luntok",
-    "homepage": "https://avenuelabs.co/",
+    "homepage": "https://www.avenuelabs.co/",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",

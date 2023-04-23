@@ -45,7 +45,7 @@ You can add your project data to the data folder in your project directory. You 
         "id": "1",
         "title": "Avenue Labs",
         "logo": "/icons/avenue-icon.png",
-        "link": "https://avenuelabs.co/",
+        "link": "https://www.avenuelabs.co/",
         "shortExcerpt": "After-hours digital playground."
     }
 ]
