@@ -3,11 +3,11 @@
 import type { Site, SocialMediaObjects } from "./types";
 
 export const SITE: Site = {
-    siteUrl: "https:/www.lane.avenuelabs.co",
+    siteUrl: "https:/www.astro-lane.avenuelabs.co",
     author: "Christian Luntok | Avenue Labs",
     desc: "A personal portfolio landing template for developers and designers. Made by Avenue Labs.",
     title: "Astro Lane | Avenue Labs",
-    ogImage: "images/lane.png",
+    ogImage: "images/astro-lane.png",
     keywords:
         "Personal portfolio, landing page, page template, developer portfoliom designer portfolio",
     postPerPage: 3
