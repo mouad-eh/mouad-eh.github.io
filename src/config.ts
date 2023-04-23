@@ -3,7 +3,7 @@
 import type { Site, SocialMediaObjects } from "./types";
 
 export const SITE: Site = {
-    siteUrl: "https:/www.astro-lane.avenuelabs.co",
+    siteUrl: "https:/www.astro-lane.avenuelabs.co/", // Always put "/" at the end of the URL
     author: "Christian Luntok | Avenue Labs",
     desc: "A personal portfolio landing template for developers and designers. Made by Avenue Labs.",
     title: "Astro Lane | Avenue Labs",
