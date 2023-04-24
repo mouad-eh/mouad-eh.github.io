@@ -52,9 +52,12 @@ All commands are run from the root of the project, from a terminal:
 
 ## Documentation
 
--   Configuration
--   Adding A Post
--   Markdown Guide
+-   [Configuration](https://www.astro-lane.avenuelabs.co/blog/how-to-configure-astro-lane)
+-   Configuring [SITE Defaults](https://www.astro-lane.avenuelabs.co/blog/how-to-configure-astro-lane#configuring-site-defaults)
+-   Configuring [Project Data](https://www.astro-lane.avenuelabs.co/blog/how-to-configure-astro-lane#configuring-project-data)
+-   [Adding A New Post](https://www.astro-lane.avenuelabs.co/blog/adding-new-post)
+-   [Markdown Guide](https://www.astro-lane.avenuelabs.co/blog/markdown-style-guide)
+-   [Tailwind Typography Guide](https://www.astro-lane.avenuelabs.co/blog/tailwind-typography)
 
 ## Want to learn more?
 
