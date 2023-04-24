@@ -13,13 +13,6 @@ export interface Props {
 }
 
 const { posts, title, tag } = Astro.props;
-
-// Remove current url path and remove trailing slash if exists
-const currentUrlPath = Astro.url.pathname.replace(/\/+$/, "");
-
-// Get url array from path
-// eg: /tags/tailwindcss => ['tags', 'tailwindcss']
-const breadcrumbList = currentUrlPath.split("/").slice(1);
 ---
 
 <Layout
