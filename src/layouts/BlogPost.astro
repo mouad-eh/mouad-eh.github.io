@@ -34,8 +34,7 @@ const { Content } = await post.render();
                     class="mx-auto prose prose-neutral prose-headings:font-medium prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl prose-h5:text-lg prose-h6:text-base prose-h2:scroll-mt-4 prose-h3:scroll-mt-4 prose-h4:scroll-mt-4 prose-h5:scroll-mt-4 prose-h6:scroll-mt-4 prose-headings:my-8"
                 >
                     <a
-                        class="cursor-pointer flex no-underline mb-16"
-                        onclick="window.history.back()"
+                        class="blog-back-button cursor-pointer flex no-underline mb-16"
                     >
                         <Icon name="ph:arrow-left-light" class="w-6 h-6 mr-4" />
                         Back
@@ -80,3 +79,23 @@ const { Content } = await post.render();
         </div>
     </SectionContainer>
 </Layout>
+
+<script>
+    // Function to create a Back to history button.
+    const buttons = document.querySelectorAll(".blog-back-button");
+    if (buttons) {
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                handleClick();
+            });
+        });
+    }
+
+    function handleClick() {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = "/blog/";
+        }
+    }
+</script>
