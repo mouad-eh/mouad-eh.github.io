@@ -8,8 +8,6 @@ import getSortedTags from "@/utils/getSortedTags";
 const posts = await getCollection("blog");
 
 let tags = getSortedTags(posts);
-
-console.log(tags);
 ---
 
 <Layout title={`Tags - ${SITE.title}`}>
