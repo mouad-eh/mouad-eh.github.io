@@ -5,6 +5,7 @@ import Layout from "@/layouts/Layout.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import { Icon } from "astro-icon";
 import getSortedTags from "@/utils/getSortedTags";
+
 const posts = await getCollection("blog");
 
 let tags = getSortedTags(posts);

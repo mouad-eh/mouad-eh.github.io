@@ -9,6 +9,7 @@ export interface Props {
     post: CollectionEntry<"blog">;
     tag: string;
 }
+
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
     const tags = getSortedTags(posts);
@@ -25,4 +26,4 @@ const posts = await getCollection("blog", ({ data }) => !data.draft);
 const tagPosts = getPostsByTag(posts, tag);
 ---
 
-{(<Tags posts={tagPosts} title="Tags" tag={tag} />)}
+<Tags posts={tagPosts} title="Tags" tag={tag} />
