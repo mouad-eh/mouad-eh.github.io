@@ -13,6 +13,7 @@ export interface Props {
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
     const tags = getSortedTags(posts);
+
     return tags.map((tag) => {
         return {
             params: { tag },

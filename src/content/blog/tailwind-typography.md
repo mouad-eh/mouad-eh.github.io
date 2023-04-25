@@ -5,7 +5,7 @@ featured: false
 draft: false
 tags:
     - tailwind
-    - Astro
+    - astro
     - markdown
 heroImage: ""
 description: "About Tailwind Typography Plugin and how you can use it effectively."
