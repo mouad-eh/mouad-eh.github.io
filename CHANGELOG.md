@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0
+
+-   Generalised site url config srouce.
+-   Fixed typo in SEO meta tags.
+-   Blog post responsive fix.
+
 ## 1.0.0 Initial Release
 
 ### Features
