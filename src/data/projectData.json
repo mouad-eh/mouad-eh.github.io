@@ -8,23 +8,23 @@
     },
     {
         "id": "2",
-        "title": "Pathway",
-        "link": "https://pathway.avenuelabs.co/",
-        "logo": "/icons/pathway-icon.png",
-        "shortExcerpt": "A NextJS Tailwind CSS SAAS Landing Page."
+        "title": "Clark",
+        "link": "https://www.clark.avenuelabs.co/",
+        "logo": "/icons/clark-icon.png",
+        "shortExcerpt": "The definitive marketing agency template."
     },
     {
         "id": "3",
-        "title": "Lane",
-        "link": "https://www.lane.avenuelabs.co/",
-        "logo": "/icons/avenue-icon-alt.png",
-        "shortExcerpt": "Portfolio template for developers and designers."
+        "title": "Flash",
+        "link": "https://www.flash.avenuelabs.co/",
+        "logo": "/icons/flash-icon.png",
+        "shortExcerpt": "Landing page template built for digital agencies."
     },
     {
         "id": "3",
         "title": "Articoole",
+        "link": "https://www.articoole.avenuelabs.co/",
         "logo": "/icons/articoole-icon.png",
-        "shortExcerpt": "Making content creation a breeze.",
-        "badgeContent": "On Going"
+        "shortExcerpt": "Making content creation a breeze. AI Saas landing page template."
     }
 ]
