@@ -7,10 +7,10 @@ import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import image from "@astrojs/image";
 import prefetch from "@astrojs/prefetch";
-
+import { SITE } from "./src/config.ts";
 // https://astro.build/config
 export default defineConfig({
-    site: "https://www.astro-lane.avenuelabs.co/",
+    site: SITE.siteUrl,
     markdown: {
         syntaxHighlight: "prism",
         remarkPlugins: [remarkToc, remarkReadingTime]
