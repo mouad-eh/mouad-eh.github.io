@@ -8,17 +8,17 @@
     },
     {
         "id": "2",
-        "title": "Clark",
-        "link": "https://www.clark.avenuelabs.co/",
+        "title": "Avenue Project",
+        "link": "https://www.avenuelabs.co/",
         "logo": "/icons/clark-icon.png",
-        "shortExcerpt": "The definitive marketing agency template."
+        "shortExcerpt": "A short description for a project."
     },
     {
         "id": "3",
-        "title": "Flash",
-        "link": "https://www.flash.avenuelabs.co/",
+        "title": "Project Title",
+        "link": "https://www.avenuelabs.co/",
         "logo": "/icons/flash-icon.png",
-        "shortExcerpt": "Landing page template built for digital agencies."
+        "shortExcerpt": "A slightly longer short description for a project."
     },
     {
         "id": "3",
