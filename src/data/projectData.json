@@ -1,30 +1,30 @@
 [
     {
-        "id": "1",
-        "title": "Avenue Labs",
-        "logo": "/icons/avenue-icon.png",
-        "link": "https://www.avenuelabs.co/",
-        "shortExcerpt": "After-hours digital playground."
+        "id": "3",
+        "title": "Articoole",
+        "link": "https://articoole.chrstnl.com/",
+        "logo": "/icons/articoole-icon.png",
+        "shortExcerpt": "Making content creation a breeze. AI Saas landing page template."
     },
     {
         "id": "2",
-        "title": "Avenue Project",
-        "link": "https://www.avenuelabs.co/",
+        "title": "Project Title",
+        "link": "https://www.chrstnl.com/",
         "logo": "/icons/clark-icon.png",
         "shortExcerpt": "A short description for a project."
     },
     {
         "id": "3",
-        "title": "Project Title",
-        "link": "https://www.avenuelabs.co/",
+        "title": "Another Project Title",
+        "link": "https://www.chrstnl.com/",
         "logo": "/icons/flash-icon.png",
         "shortExcerpt": "A slightly longer short description for a project."
     },
     {
         "id": "3",
-        "title": "Articoole",
-        "link": "https://www.articoole.avenuelabs.co/",
-        "logo": "/icons/articoole-icon.png",
-        "shortExcerpt": "Making content creation a breeze. AI Saas landing page template."
+        "title": "Nutritrack",
+        "link": "https://astro-nutritrack.chrstnl.com/",
+        "logo": "/icons/nutritrack-icon.png",
+        "shortExcerpt": "A customizable landing page template designed for Notion Creators."
     }
 ]

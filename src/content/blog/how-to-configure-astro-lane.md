@@ -20,10 +20,10 @@ If you're looking to configure some global data on your site, you'll want to mod
 
 ```ts
 export const SITE: Site = {
-    siteUrl: "https:/www.lane.avenuelabs.co", // Global Site URL
-    author: "Christian Luntok | Avenue Labs", // Author for Posts
-    desc: "A personal portfolio landing template for developers and designers. Made by Avenue Labs.", // Default site description
-    title: "Astro Lane | Avenue Labs", // Default site title
+    siteUrl: "https:/astro-lane.chrstnl.com", // Global Site URL
+    author: "chrstnl", // Author for Posts
+    desc: "A personal portfolio landing template for developers and designers.", // Default site description
+    title: "Astro Lane", // Default site title
     ogImage: "images/lane.png", // Default ogImage
     keywords:
         "Personal portfolio, landing page, page template, developer portfoliom designer portfolio", //Default Keywords
@@ -43,10 +43,10 @@ You can add your project data to the data folder in your project directory. You 
 [
     {
         "id": "1",
-        "title": "Avenue Labs",
-        "logo": "/icons/avenue-icon.png",
-        "link": "https://www.avenuelabs.co/",
-        "shortExcerpt": "After-hours digital playground."
+        "title": "Astro Lane",
+        "logo": "/icons/astro-lane-icon.png",
+        "link": "https://astro-lane.chrstnl.com/",
+        "shortExcerpt": "A theme made for you!"
     }
 ]
 ```
