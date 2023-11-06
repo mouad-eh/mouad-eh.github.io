@@ -3,10 +3,10 @@
 import type { Site, SocialMediaObjects } from "./types";
 
 export const SITE: Site = {
-    siteUrl: "https:/www.astro-lane.avenuelabs.co/", // Always put "/" at the end of the URL
-    author: "Christian Luntok | Avenue Labs",
-    desc: "A personal portfolio landing template for developers and designers. Made by Avenue Labs.",
-    title: "Astro Lane | Avenue Labs",
+    siteUrl: "https:/astro-lane.chrstnl.co/", // Always put "/" at the end of the URL
+    author: "chrstnl",
+    desc: "A personal portfolio landing template for developers and designers.",
+    title: "Astro Lane",
     ogImage: "images/astro-lane.png",
     keywords:
         "Personal portfolio, landing page, page template, developer portfoliom designer portfolio",
