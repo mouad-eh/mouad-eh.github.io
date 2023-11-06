@@ -1,9 +1,9 @@
 <div align="center">
-  <img alt="Astro Lane - Avenue Labs logo" src="/public/icons/avenue-icon-alt.png" width="70" />
+  <img alt="Astro Lane" src="/public/android-chrome-192x192.png" width="70" />
 </div>
 
 <h1 align="center">
-  Astro Lane - Avenue Labs Astro Theme 🚀
+  Astro Lane - An Astro Theme 🚀
 </h1>
 
 Astro Lane is a customizable blog theme for Astro, designed to provide a personalized touch to your site with ease. The theme offers minimal styling, making it easy for you to tailor it to your needs.
@@ -35,7 +35,7 @@ Astro Lane scores 100/100 in the Lighthouse performance audit.
 
 ## Demo
 
-Check out the [Demo](https://astro-lane.avenuelabs.co/), hosted on Vercel.
+Check out the [Demo](https://astro-lane.chrstnl.com/), hosted on Vercel.
 
 ## Commands
 
@@ -52,12 +52,12 @@ All commands are run from the root of the project, from a terminal:
 
 ## Documentation
 
--   [Configuration](https://www.astro-lane.avenuelabs.co/blog/how-to-configure-astro-lane)
--   Configuring [SITE Defaults](https://www.astro-lane.avenuelabs.co/blog/how-to-configure-astro-lane#configuring-site-defaults)
--   Configuring [Project Data](https://www.astro-lane.avenuelabs.co/blog/how-to-configure-astro-lane#configuring-project-data)
--   [Adding A New Post](https://www.astro-lane.avenuelabs.co/blog/adding-new-post)
--   [Markdown Guide](https://www.astro-lane.avenuelabs.co/blog/markdown-style-guide)
--   [Tailwind Typography Guide](https://www.astro-lane.avenuelabs.co/blog/tailwind-typography)
+-   [Configuration](https://astro-lane.chrstnl.com/blog/how-to-configure-astro-lane)
+-   Configuring [SITE Defaults](https://astro-lane.chrstnl.com/blog/how-to-configure-astro-lane#configuring-site-defaults)
+-   Configuring [Project Data](https://astro-lane.chrstnl.com/blog/how-to-configure-astro-lane#configuring-project-data)
+-   [Adding A New Post](https://astro-lane.chrstnl.com/blog/adding-new-post)
+-   [Markdown Guide](https://astro-lane.chrstnl.com/blog/markdown-style-guide)
+-   [Tailwind Typography Guide](https://astro-lane.chrstnl.com/blog/tailwind-typography)
 
 ## Want to learn more?
 
@@ -67,13 +67,9 @@ Check out [Astro's documentation](https://docs.astro.build).
 
 You can deploy your own Astro site on various platforms by following the [Astro docs](https://docs.astro.build/en/guides/deploy/) guide. By default, the site will be built (see Commands section above) to a `/dist` directory.
 
-## License
-
-Licensed under the MIT License, Copyright © 2023
-
 ## Feedback and Suggestions
 
-If you have any suggestions/feedback, you can contact the creator, Christian Luntok, via [hey@avenuelabs.co](mailto:hey@avenuelabs.co). Alternatively, feel free to open an issue if you find bugs or want to request new features.
+If you have any suggestions/feedback, Feel free to open an issue if you find bugs or want to request new features.
 
 ## Credit/Acknowledgements
 
@@ -81,4 +77,4 @@ This theme functionality is loosely based on [Astro Paper](https://github.com/sa
 
 ---
 
-Made by [Christian Luntok - Avenue Labs](https://avenuelabs.co/)
+Made by [chrstnl](https://www.chrstnl.com/)

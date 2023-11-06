@@ -2,9 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.0
+
+- Updated Change Log.
+- Updated README.
+- Removed badgeContent.
+- Updated favicon.
+- Updated content and images.
+- Updated styling for consistent hovers.
+
+
 ## 1.1.0
 
--   Generalised site url config srouce.
+-   Generalised site url config source.
 -   Fixed typo in SEO meta tags.
 -   Blog post responsive fix.
 

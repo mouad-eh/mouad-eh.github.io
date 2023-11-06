@@ -3,7 +3,7 @@
 import type { Site, SocialMediaObjects } from "./types";
 
 export const SITE: Site = {
-    siteUrl: "https:/astro-lane.chrstnl.co/", // Always put "/" at the end of the URL
+    siteUrl: "https:/astro-lane.chrstnl.com/", // Always put "/" at the end of the URL
     author: "chrstnl",
     desc: "A personal portfolio landing template for developers and designers.",
     title: "Astro Lane",
