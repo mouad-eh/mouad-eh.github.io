@@ -3,10 +3,10 @@
 import type { Site, SocialMediaObjects } from "./types";
 
 export const SITE: Site = {
-    siteUrl: "https:/astro-lane.chrstnl.com/", // Always put "/" at the end of the URL
-    author: "chrstnl",
-    desc: "A personal portfolio landing template for developers and designers.",
-    title: "Astro Lane",
+    siteUrl: "https://mouad-eh.github.io/", // Always put "/" at the end of the URL
+    author: "Mouad Elhaouari",
+    desc: "A personal portfolio/blog.",
+    title: "Mouad Elhaouari",
     ogImage: "images/astro-lane.png",
     keywords:
         "Personal portfolio, landing page, page template, developer portfoliom designer portfolio",
@@ -18,7 +18,7 @@ export const SITE: Site = {
 export const SOCIALS: SocialMediaObjects = [
     {
         name: "Github",
-        href: "https://github.com/christian-luntok/astro-lane/",
+        href: "https://github.com/mouad-eh/",
         icon: "ph:github-logo-duotone",
         title: `Follow ${SITE.author} on Github`,
         active: true
@@ -35,25 +35,25 @@ export const SOCIALS: SocialMediaObjects = [
         href: "https://github.com/christian-luntok/astro-lane/",
         icon: "ph:instagram-logo-duotone",
         title: `Follow ${SITE.author} on Instagram`,
-        active: true
+        active: false
     },
     {
         name: "LinkedIn",
-        href: "https://github.com/christian-luntok/astro-lane/",
+        href: "https://www.linkedin.com/in/mouadelhaouari/",
         icon: "ph:linkedin-logo-duotone",
         title: `Follow ${SITE.title} on LinkedIn`,
         active: true
     },
     {
         name: "Mail",
-        href: "mailto:yourmail@gmail.com",
+        href: "mailto:mouadelhaouari11@gmail.com",
         title: `Send an email to ${SITE.title}`,
-        icon: "",
-        active: false
+        icon: "ph:chat-centered-text-duotone",
+        active: true
     },
     {
         name: "Twitter",
-        href: "https://github.com/christian-luntok/astro-lane/",
+        href: "https://twitter.com/mouad_eh/",
         icon: "ph:twitter-logo-duotone",
         title: `Follow ${SITE.author} on Twitter`,
         active: true

@@ -5,7 +5,7 @@ import "../styles/globals.scss";
 import SectionContainer from "@/components/SectionContainer.astro";
 import SEO from "@/components/seo/SEO.astro";
 import { Icon } from "astro-icon";
-import { SOCIALS } from "@config";
+import { SOCIALS, SITE } from "@config";
 
 const currentYear = new Date().getFullYear();
 
@@ -37,9 +37,9 @@ const {
         </main>
 
         <SectionContainer class="mt-32">
-            <footer class="py-40 bg-neutral-50">
-                <div class="wrap-sm mx-auto px-8 grid gap-16">
-                    <h2
+            <footer class="py-10 bg-neutral-50">
+                <div class="wrap-sm mx-auto px-8 grid gap-8">
+                    <!-- <h2
                         class="font-medium text-4xl md:text-6xl lg:text-7xl leading-10 lg:leading-[70px] tracking-tight lg:tracking-tighter"
                     >
                         Let&apos;s make{" "}
@@ -56,14 +56,14 @@ const {
                         If you want to know more about tweaking my style, adding
                         more posts, and making it truly yours, just click on the
                         GitHub link below to check out my repo.
-                    </p>
+                    </p> -->
                     <div class="footer-credits text-neutral-500">
-                        <a
+                        <!-- <a
                             class="block text-3xl md:text-5xl lg:text-4xl font-medium mb-2 md:mb-8 lg:mb-4 leading-10 tracking-tighter relative hover:underline hover:-top-0.5 hover:text-skin-accent hover:text-black focus-visible:p-1"
-                            href="mailto:hey@astrolane.com"
+                            href="mailto:mouadelhaouari11@gmail.com"
                         >
-                            hey@astrolane.com
-                        </a>
+                            mouadelhaouari11@gmail.com
+                        </a> -->
                         <div
                             class="footer-socials font-medium flex gap-6 md:gap-10 max-w-md text-xl md:text-3xl lg:text-2xl leading-10 tracking-tighter"
                         >
@@ -89,9 +89,13 @@ const {
                     <span
                         class="text-neutral-500 text-md flex flex-wrap gap-4 md:gap-0 md:justify-between"
                     >
-                        <span>Copyright © {currentYear} 🚀 Astro Lane</span>
-                        <a class="" target="_blank" href="https://www.chrstnl.com/">
-                            Made by chrstnl.
+                        <span>Copyright © {currentYear} 🚀 {SITE.author}</span>
+                        <a
+                            class=""
+                            target="_blank"
+                            href="https://www.chrstnl.com/"
+                        >
+                            Template made by chrstnl.
                         </a>
                     </span>
                 </div>
