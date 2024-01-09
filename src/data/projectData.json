@@ -1,30 +1,23 @@
 [
     {
-        "id": "3",
-        "title": "Articoole",
-        "link": "https://articoole.chrstnl.com/",
-        "logo": "/icons/articoole-icon.png",
-        "shortExcerpt": "Making content creation a breeze. AI Saas landing page template."
+        "id": "1",
+        "title": "Tweexicon",
+        "link": "https://github.com/mouad-eh/tweexicon",
+        "logo": "/icons/twitter-icon.png",
+        "shortExcerpt": "A simple solution for saving and organizing tweets into categories."
     },
     {
         "id": "2",
-        "title": "Project Title",
-        "link": "https://www.chrstnl.com/",
-        "logo": "/icons/clark-icon.png",
-        "shortExcerpt": "A short description for a project."
+        "title": "The Tech Stream",
+        "link": "https://github.com/mouad-eh/the-tech-stream",
+        "logo": "/icons/faang-icon.png",
+        "shortExcerpt": "Engineering blogs aggregator from top tech companies."
     },
     {
         "id": "3",
-        "title": "Another Project Title",
-        "link": "https://www.chrstnl.com/",
-        "logo": "/icons/flash-icon.png",
-        "shortExcerpt": "A slightly longer short description for a project."
-    },
-    {
-        "id": "3",
-        "title": "Nutritrack",
-        "link": "https://astro-nutritrack.chrstnl.com/",
-        "logo": "/icons/nutritrack-icon.png",
-        "shortExcerpt": "A customizable landing page template designed for Notion Creators."
+        "title": "Dz Univ CDN",
+        "link": "https://github.com/mouad-eh/dz-univ-cdn",
+        "logo": "/icons/cdn-icon.png",
+        "shortExcerpt": "Content delivery network (CDN) for Algerian universities."
     }
 ]
