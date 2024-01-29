@@ -2,7 +2,7 @@
 title: Tailwind Typography Plugin
 pubDate: 2023-04-21
 featured: false
-draft: false
+draft: true
 tags:
     - tailwind
     - astro

@@ -3,8 +3,8 @@ title: "Testing Testing 123"
 description: "First Post - Hello World"
 pubDate: 2023-04-02
 heroImage: "/images/placeholder-hero.jpg"
-featured: true
-draft: false
+featured: false
+draft: true
 tags:
     - post
     - guide
