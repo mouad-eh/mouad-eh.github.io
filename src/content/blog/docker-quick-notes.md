@@ -1,5 +1,5 @@
 ---
-title: Docker quick notes
+title: Facts About Docker That You May Not Know
 pubDate: 2023-08-02
 featured: true
 draft: false
@@ -8,143 +8,61 @@ tags:
     - containers
     - devops
 heroImage: ""
-description: "useful notes I took while learning docker through a course from kodecloud."
+description: "Explore lesser-known insights about Docker that might be unfamiliar to you."
 ---
 
-## Introduction
+## Native Containers
 
-you can not run a windows based container on a linux machine
+-   Linux and Windows coexist in the container world, but they have different compatibility. Linux-based containers are more common, while Windows has two container types:
 
-you can run a linux based container on windows ( windows - linux VM - linux based container )
+    -   Windows Server Containers: run on windows servers and share the kernel like Linux.
+    -   Hyper-V Containers: each container has its own kernel like a lighweight VM.
 
-## Docker Command
+-   Linux containers rely on two kernel features:
 
-you can not delete a container while it is running
+    -   namespaces for isolation, ensuring processes have different PIDs inside the host and the container.
+    -   Cgroups which restrict CPU/RAM resources allocated to a container.
 
-you can not delete an image if there is container runned from that image whether it is actually running or exited
+-   Running a Linux-based container on Windows is possible using Docker Desktop. It achieves this by creating a Linux VM on top of hyper-v and running containers on it.
 
-### commands
+-   Windows for desktop primarily runs Linux containers but can be configured for Windows containers (the Hyper-V type).
 
--   inspect
--   attach
--   ‘run -a’ (attach stdin, stdout of the container to the terminal)
+## Docker Architecture
 
-docker run - a kodekloud/simple-prompt-docker (i have to run this to check if -a is by default added)
+-   Docker Engine comprises the CLI, REST API, and Daemon. The CLI and API can be on separate hosts, allowing for remote Docker commands. Example: `docker -H 10.12.0.1:23303 run nginx` creates a nginx container on a remote host.
 
--   exec
--   logs
--   run -d
--   run -it ( i: Keep STDIN open even if not attached, t: Allocate a pseudo-TTY → gives you container terminal )
+## Containers and Images
 
-The `-it` instructs Docker to allocate a pseudo-TTY connected to the container’s stdin → creating an interactive `bash` shell in the container.
+-   A running container cannot be deleted directly; it must be stopped first. Similarly, an image with an associated container, whether running or stopped, cannot be deleted until the container is stoped and then deleted.
 
-<aside>
-💡 every process has a stdin, stdout, stderr files (datastream open for it), you can count a docker container as a process
+-   One of the differences between ENTRYPOINT and CMD in a Dockerfile is that: `docker run <image-name> <command>` overides CMD but append to ENTRYPOINT.
 
-</aside>
+## Networking in Docker
 
-## Docker images
+-   There are three default network types in Docker:
 
--   Docker history image
+    -   **Bridge:** This is the network type used by if the `--network` flag is not specified. Each created container is added to the bridge network by default. You can perform port mapping between container and host ports.
 
-difference between ENTRYPOINT and CMD: docker run image [COMMAND] override CMD and append to ENTRYPOINT
+    -   **None:** Containers with the `--network none` option are placed in an isolated network, and no port mappings can be done in this mode.
 
-## Docker compose
+    -   **Host:** Containers with the `--network host` option share the network namespace with the host. Port mappings are not needed, as the containers directly use the host's network. However, this prevents running multiple containers with the same port on the host.
 
-[https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell](https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell)
+-   You can create your own network, specify the IP range and the type of the network by using the `docker network create ...` command.
 
-docker run —link redis:redis (deprecated)
+-   Containers attached to brige default network use host dns server
 
-docker compose v1 (this is the version of the compose file not compose itself) is also deprecated since it also uses links
+-   Containers attached to custom networks use docker internal dns server.
 
-v2 and beyond (version of the compose file format) : version, services, networks, volumes
+-   Docker compose creates a default network linking between the services and manages hostname resolution to ip address automatically (hostname is the service name).
 
--   create a default network linking between the services and manage hostname resolution to ip address automatically (hostname is the service name)
+## Container registery
 
-## Docker engine, storage
+-   The default registry for docker is is [docker.io](http://docker.io).
 
-docker engine:
-
--   docker CLI
--   REST api
--   docker deamon
-
-<aside>
-💡 deomon is a type of process that is always running in the background (services in linux)
-
-</aside>
-
-cli and api can be in seperate hosts: docker -H 10.12.0.1:23303 run nginx
-
-namespaces(isolation): same process have different PID in the host and inside the container, you can see this by running a command inside a docker container and doing ps in both host and the container, you will see the same command with different PID
-
-cgroups(restriction): restrict CPU/RAM ressources allocated to a container, by default there is no restriction
-
----
-
-docker image layers are read only, when you run a docker run command you add a container layer (read and write layers) on top of the image read only layers
-
-you can change app code inside the container, the code file will be copied to the container layer and changed (copy on write)
-
-the container layer is removed when container deleted and not stopped
-
-### mounting:
-
--   volume mounting (mounting volumes under /var/lib/docker/volumes)
--   bind mounting (mounting any directory on the host file system, you can even mount on external hard drive)
-
-docker —mount → more verbose than docker -v
-
-under the hood of mounting and volumes: storage drivers
-
-## Networking
-
-default networks types:
-
--   bridge: every created container is added to it by default, you can do mapping
--   none: isolated network (I geuss there is no way to map it) —network=none
--   host: no need for mapping but you can not run containers with the same port —network=host
-
-you can create your own network and specify the IP range and the type of the network (docker network create …)
-
-containers attached to brige default network use host dns server
-
-containers attached to custom networks use docker internal dns server
-
-## Docker registry
-
-default registry: [docker.io](http://docker.io) ( docker pull nginx/nginx-ingress → docker pull [docker.io/nginx/nginx-ingress](http://docker.io/nginx/nginx-ingress) )
-
-you can deploy your own registry on-premis:
-
--   run the registry container and map it to a host port
--   tag the image ( linking the local image with a remote image )
--   push
-
-## Docker on mac and windows
-
-windows:
-
--   two option to run linux based docker containers on windows: virtualbox (docker toolbox) and hyper-v (docker destop for windows) : **hypervisor(virtual box or hyper-v) → linux OS → docker engine → docker container**
--   there is two types of windows containers:
-    -   windows server containers (running on windows servers and share the kernel like linux )
-    -   hyper-v containers (each container with its kernel like lightweight virtual machine)
--   windows for desktop by default runs linux containers and you can configure it to run windows containers (hyper-v ones)
--   virtualBox and hyper-v can not co-exists on the same windows host
-
-macOS:
-
--   no images or containers specific to macOS
--   same analogy as windows: hyperkit instead of hyper-v
+-   Tech companies often have their own container registry, usually deployed on their on-premise data centers.
 
 ## Container orchestration
 
-**_why container orchestration tool:_**
+-   In production environment, you can’t just have one docker host, you need to have a more reliable system by running multiple docker hosts to ensure high availability.
 
--   in production environment you can’t just have one docker host ( you need to have a more robust system by running multiple docker hosts → a distributed system )
--   there is also the problem of unhealthy container
--   auto-scaling
-
-docker swarm lack the auto-scaling feature
-
-relation between docker and kubernetes: docker is one of the container engines compatible with kubernetes
+-   Container orchestration tools addresses issues like managing multiple hosts, handling unhealthy containers, and enables auto-scaling.
