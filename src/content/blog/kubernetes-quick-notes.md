@@ -46,19 +46,19 @@ As mentioned before, a Pod resource encapsulates a container. If you want to run
 
 Here is an example demonstrating a YAML file describing a Pod resource that encapsulates one NGINX container:
 
-```YAML
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
-  labels:
-    app: nginx
+    name: nginx-pod
+    labels:
+        app: nginx
 spec:
-  containers:
-  - name: nginx-container
-    image: nginx:latest
-    ports:
-    - containerPort: 80
+    containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+              - containerPort: 80
 ```
 
 Assuming that the above yaml file is named _nginx.yaml_, in order to run this example execute the following command:
@@ -89,24 +89,24 @@ kubectl describe pod nginx-pod
 
 A ReplicaSet is another Kubernetes resource that ensures an exact number of pods of a certain type is always running. If you delete one of the pods, another one will be automatically created. If you manually add a pod with the same selector, it will be terminated.
 
-```YAML
+```yaml
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: nginx-replicaset
+    name: nginx-replicaset
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx-container
-        image: nginx:latest
+    replicas: 3
+    selector:
+        matchLabels:
+            app: nginx
+    template:
+        metadata:
+            labels:
+                app: nginx
+        spec:
+            containers:
+                - name: nginx-container
+                  image: nginx:latest
 ```
 
 When applying the above YAML file, three NGINX pods are created, and you can verify this by listing all the pods using kubectl.
@@ -133,26 +133,26 @@ That's why deployments exits in kubernetes, they allow for more automated rollou
 
 Here is an example of how a deployment might look like:
 
-```YAML
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+    name: nginx-deployment
 spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+    replicas: 3
+    selector:
+        matchLabels:
+            app: nginx
+    template:
+        metadata:
+            labels:
+                app: nginx
+        spec:
+            containers:
+                - name: nginx
+                  image: nginx:latest
+                  ports:
+                      - containerPort: 80
 ```
 
 When creating a deployment, a replicaset is created under the hood to ensure that the specified number of replicas is always respected.
@@ -196,18 +196,18 @@ A Service can be conceptualized as a unified endpoint that aggregates other endp
 
 Here how a service might look like:
 
-```YAML
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-service
+    name: nginx-service
 spec:
-  selector:
-    app: nginx
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+    selector:
+        app: nginx
+    ports:
+        - protocol: TCP
+          port: 80
+          targetPort: 80
 ```
 
 By specifying the selector as `app: nginx` every pods with a label `app: nginx` will be listed as an endpoint under this service.
