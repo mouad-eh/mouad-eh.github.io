@@ -15,8 +15,8 @@
     },
     {
         "id": "3",
-        "title": "Dz Univ CDN",
-        "link": "https://github.com/mouad-eh/dz-univ-cdn",
+        "title": "esi CDN",
+        "link": "https://github.com/m0kr4n3/esiCDN",
         "logo": "/icons/cdn-icon.png",
         "shortExcerpt": "Content delivery network (CDN) for Algerian universities."
     }
